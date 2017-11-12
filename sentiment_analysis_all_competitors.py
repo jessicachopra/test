@@ -31,7 +31,7 @@ def load_twitter_data(twitter_file):
     dfList2 =twtr_df[5].tolist()
     dt_lst=[]
     for i in dfList1: 
-       
+        i=i.strip(".")
         dt = datetime.strptime(i, '%m/%d/%y')
         dt=datetime.strftime(dt,'%m/%d/%y')
         dt_lst.append(dt)
@@ -266,11 +266,11 @@ def scores(df):
 ## Get data for monthly sentiment score for all companies      
     
     
-sonic_data = consolidate_text_data('twitter_Sonic_hashtag_twitter.com.csv','SonicDriveIn_facebook_statuses.csv')
-burgerking_data = consolidate_text_data('twitter_BurgerKing_hashtag_twitter.com.csv','burgerking_facebook_statuses.csv')
-wendys_data = get_text_data('Wendys_facebook_statuses.csv')
-jackinthebox_data = get_text_data('jackinthebox_facebook_statuses.csv')
-macdonalds_data = get_text_data('MacDonalds_facebook_statuses.csv')
+sonic_data = consolidate_text_data('twitter_Sonic_Data.csv','SonicDriveIn_facebook_statuses.csv')
+burgerking_data = consolidate_text_data('twitter_BurgerKing_Data.csv','burgerking_facebook_statuses.csv')
+wendys_data = consolidate_text_data('twitter_Wendys_Data.csv','Wendys_facebook_statuses.csv')
+jackinthebox_data = consolidate_text_data('twitter_Jackinthebox_Data.csv','jackinthebox_facebook_statuses.csv')
+macdonalds_data = consolidate_text_data('twitter_McDonalds_Data.csv','MacDonalds_facebook_statuses.csv')
 
 
 
@@ -325,9 +325,6 @@ mean_burgerking=burgerking['score'].mean()
 mean_macdonalds=macdonalds['score'].mean()
 mean_wendys=wendys['score'].mean()
 mean_jackinthebox=jackinthebox['score'].mean()
-
-
-
 
 
 

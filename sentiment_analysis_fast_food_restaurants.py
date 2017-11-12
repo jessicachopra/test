@@ -63,8 +63,12 @@ def load_facebook_data(facebook_file):
 ## READ ALL text data
 
 ###############################################################################
-sonic_twitter=load_twitter_data('twitter_Sonic_hashtag_twitter.com.csv')
-burgerking_twitter=load_twitter_data('twitter_BurgerKing_hashtag_twitter.com.csv')
+sonic_twitter=load_twitter_data('twitter_Sonic_Data.csv')
+burgerking_twitter=load_twitter_data('twitter_BurgerKing_Data.csv')
+macdonalds_twitter=load_twitter_data('twitter_McDonalds_Data.csv')
+wendys_twitter=load_twitter_data('twitter_Wendys_Data.csv')
+jackinthebox_twitter=load_twitter_data('twitter_Jackinthebox_Data.csv')
+
 
 sonic_facebook = load_facebook_data('SonicDriveIn_facebook_statuses.csv')
 burgerking_facebook = load_facebook_data('burgerking_facebook_statuses.csv')
@@ -112,6 +116,11 @@ print(agg_data)
 ## Consolidate Twitter data
 
 consolidate_twitter=sonic_twitter.append(burgerking_twitter)
+consolidate_twitter=consolidate_twitter.append(macdonalds_twitter)
+consolidate_twitter=consolidate_twitter.append(wendys_facebook)
+consolidate_twitter=consolidate_twitter.append(jackinthebox_twitter)
+
+
 
 #############################################################################
 
